@@ -26,9 +26,9 @@
         try {
 
           const reader = new NDEFReader() ;
-
+          await reader.scan();
           console.log('* Start Scan');
-          reader.scan();
+          
 
           reader.addEventListener ( 'readingerror', (e) => { 
             console.log("Argh! Cannot read data from the NFC tag. Try another one?") ; 
