@@ -9,18 +9,20 @@
   <body>
     <h1></h1>
     <button onclick="location.href = (location.href.split('?')[0] + '?' + Date.now() )">Refresh</button>
-    <button onclick="listenNFCData()">Scan</button>
 
     <hr>
     <div id="logger" style="border: 1px"></div>
 
     <script>
       function listenNFCData () {
+
         if (!("NDEFReader" in window))
         {
           console.log("Web NFC is not available. Use Chrome on Android.");
           return ;
         }
+
+        
 
 
         console.log ( '===== Start NFC Listening =====' ) ;
@@ -53,7 +55,7 @@
 
 
         initLogger();
-        //listenNFCData();
+        listenNFCData();
       }
 
 
