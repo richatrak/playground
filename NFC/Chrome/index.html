@@ -27,6 +27,9 @@
 
           const reader = new NDEFReader() ;
 
+          console.log('* Start Scan');
+          reader.scan();
+
           reader.addEventListener ( 'readingerror', (e) => { 
             console.log("Argh! Cannot read data from the NFC tag. Try another one?") ; 
             console.log(e) ; 
@@ -37,6 +40,8 @@
             console.log('S/N: ' + serialNumber) ;
             console.log(`> Records: (${message.records.length})`);
           } ) ;
+
+          
 
           console.log(' * Reader Ready');
           
